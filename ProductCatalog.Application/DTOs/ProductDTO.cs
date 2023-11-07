@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using ProductCatalog.Domain.Entities;
 
 namespace ProductCatalog.Application.DTOs;
@@ -38,5 +39,6 @@ public class ProductDTO
 
     [DisplayName("Categories")]
     public int CategoryId { get; set; }
+    [JsonIgnore]
     public Category? Category { get; set; }
 }

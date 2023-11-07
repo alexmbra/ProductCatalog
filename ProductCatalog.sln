@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Domain", "ProductCatalog.Domain\ProductCatalog.Domain.csproj", "{CE2EEED0-BB8C-4A04-A69D-2931300CD00D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.Domain", "ProductCatalog.Domain\ProductCatalog.Domain.csproj", "{CE2EEED0-BB8C-4A04-A69D-2931300CD00D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Application", "ProductCatalog.Application\ProductCatalog.Application.csproj", "{1D12B860-4A87-448E-A7C6-A015263E6CE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.Application", "ProductCatalog.Application\ProductCatalog.Application.csproj", "{1D12B860-4A87-448E-A7C6-A015263E6CE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Infra.Data", "ProductCatalog.Infra.Data\ProductCatalog.Infra.Data.csproj", "{6D5B7AAA-3939-49C9-ABFC-1FCC70F634C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.Infra.Data", "ProductCatalog.Infra.Data\ProductCatalog.Infra.Data.csproj", "{6D5B7AAA-3939-49C9-ABFC-1FCC70F634C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Infra.IoC", "ProductCatalog.Infra.IoC\ProductCatalog.Infra.IoC.csproj", "{9421777D-8C6C-4A83-A9FF-D4F619CE0364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.Infra.IoC", "ProductCatalog.Infra.IoC\ProductCatalog.Infra.IoC.csproj", "{9421777D-8C6C-4A83-A9FF-D4F619CE0364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.WebUI", "ProductCatalog.WebUI\ProductCatalog.WebUI.csproj", "{4924D408-712B-426C-B5E9-5806663460B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.WebUI", "ProductCatalog.WebUI\ProductCatalog.WebUI.csproj", "{4924D408-712B-426C-B5E9-5806663460B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Domain.Tests", "ProductCatalog.Domain.Tests\ProductCatalog.Domain.Tests.csproj", "{8E8F659D-9DA3-41FE-93A2-40DF38443674}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.Domain.Tests", "ProductCatalog.Domain.Tests\ProductCatalog.Domain.Tests.csproj", "{8E8F659D-9DA3-41FE-93A2-40DF38443674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.API", "ProductCatalog.API\ProductCatalog.API.csproj", "{41CA9C2D-B0B8-4937-BF01-3C2F22D4A89B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8E8F659D-9DA3-41FE-93A2-40DF38443674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E8F659D-9DA3-41FE-93A2-40DF38443674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E8F659D-9DA3-41FE-93A2-40DF38443674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CA9C2D-B0B8-4937-BF01-3C2F22D4A89B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CA9C2D-B0B8-4937-BF01-3C2F22D4A89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CA9C2D-B0B8-4937-BF01-3C2F22D4A89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CA9C2D-B0B8-4937-BF01-3C2F22D4A89B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

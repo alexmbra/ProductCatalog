@@ -1,4 +1,9 @@
-﻿using ProductCatalog.Application.Interfaces;
+﻿using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using ProductCatalog.Application.Interfaces;
 using ProductCatalog.Application.Mappings;
 using ProductCatalog.Application.Services;
 using ProductCatalog.Domain.Account;
@@ -7,15 +12,11 @@ using ProductCatalog.Domain.Interfaces;
 using ProductCatalog.Infra.Data.Context;
 using ProductCatalog.Infra.Data.Identity;
 using ProductCatalog.Infra.Data.Repositories;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace ProductCatalog.Infra.IoC;
-public static class DependencyInjection
+public static class DependencyInjectionAPI
 {
-    public static IServiceCollection AddInfrastucture(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddInfrastuctureAPI(this IServiceCollection services, IConfiguration configuration)
     {
         string connectionString = configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
 
@@ -28,13 +29,7 @@ public static class DependencyInjection
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-        services.ConfigureApplicationCookie(options =>
-        {
-            options.AccessDeniedPath = "/Account/Login";
-        });
-
         services.AddScoped<IAuthenticate, AuthenticateService>();
-        services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
         services.AddScoped<IDapperRepository<Product>>(sp => new DapperProductRepository(connectionString));
         services.AddScoped<IRepository<Product>, ProductRepository>();
         services.AddScoped<IRepository<Category>, CategoryRepository>();
