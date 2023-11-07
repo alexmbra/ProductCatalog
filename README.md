@@ -26,8 +26,5 @@ To get started with ProductCatalog, follow these steps:
 3. Run the database migrations to create the necessary database schema
 4. Update the database
 
-
-ProductCatalog should now be up and running. Access it in your web browser at http://localhost:5000 or https://localhost:5001 for secure connections.
-
 License
 This project is licensed under the MIT License.
