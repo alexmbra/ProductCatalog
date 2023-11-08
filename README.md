@@ -5,15 +5,18 @@ This project is designed for praticing the development of a enterprise-level web
 
 ## Features
 
-- **Clean Architecture**: ProductCatalog is structured following the Clean Architecture pattern, ensuring a clear separation of concerns among the layers: Presentation (WebUI), Application, Domain,  Infrastructure (Data and Ioc) and Tests.
+- **Clean Architecture**: ProductCatalog is structured following the Clean Architecture pattern, ensuring a clear separation of concerns among the layers: Presentation (WebUI and API), Application, Domain,  Infrastructure (Data and Ioc) and Tests.
 
 - **MVC pattern**: The project uses ASP.NET Core 7 MVC for the web presentation layer, offering a user-friendly and responsive interface.
+- **API**: The project also uses ASP.NET Core 7 API for the web presentation layer..
 
 - **CQRS pattern**: It follows the Command-Query Responsibility Segregation (CQRS) pattern. It uses Dapper for query operations, which provides fast and efficient read-only access to the database. For command operations, Entity Framework Core (EF Core) is used.
 
 - **Automapper**: Automapper is integrated to simplify the mapping of data between DTOs, Domain Entities, and Database Models.
 
 - **Unit Testing**: Unit tests are implemented using NUnit, ensuring the reliability and correctness of the code.
+
+- **Authentication and Authorization**: The project uses Identity and JWT for authentication.
 
 - **SOLID Principles**: The codebase tries to adheres to SOLID principles, enhancing code maintainability and extensibility.
 
