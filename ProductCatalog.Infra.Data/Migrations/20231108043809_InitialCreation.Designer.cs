@@ -12,8 +12,8 @@ using ProductCatalog.Infra.Data.Context;
 namespace ProductCatalog.Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231108015943_SeedProducts")]
-    partial class SeedProducts
+    [Migration("20231108043809_InitialCreation")]
+    partial class InitialCreation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
