@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProductCatalog.Application.DTOs;
 using ProductCatalog.Application.Interfaces;
-using ProductCatalog.Application.Products.Queries;
-using ProductCatalog.Domain.Entities;
 
 namespace ProductCatalog.API.Controllers;
+
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class ProductsController : ControllerBase
 {
     private readonly IProductService _productService;
@@ -20,9 +22,9 @@ public class ProductsController : ControllerBase
     public async Task<ActionResult<IEnumerable<ProductDTO>>> Get()
     {
         var products = await _productService.GetProductsAsync();
-        if(products is null)
+        if (products is null)
         {
-            return NotFound("Products not found");  
+            return NotFound("Products not found");
         }
 
         return Ok(products);
@@ -50,18 +52,18 @@ public class ProductsController : ControllerBase
 
         await _productService.Add(productDTO);
 
-        return new CreatedAtRouteResult("GetProduct", new {id = productDTO.Id} , productDTO);
+        return new CreatedAtRouteResult("GetProduct", new { id = productDTO.Id }, productDTO);
     }
 
     [HttpPut]
     public async Task<IActionResult> Put(int id, [FromBody] ProductDTO productDTO)
     {
-        if(id != productDTO.Id)
+        if (id != productDTO.Id)
         {
             return BadRequest();
         }
 
-        if(productDTO is null)
+        if (productDTO is null)
         {
             return BadRequest();
         }
@@ -75,7 +77,7 @@ public class ProductsController : ControllerBase
     public async Task<IActionResult> Delete(int id)
     {
         var product = await _productService.GetProductByIdAsync(id);
-        if(product is null)
+        if (product is null)
         {
             return NotFound("Product not found");
         }

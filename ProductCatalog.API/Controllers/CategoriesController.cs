@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProductCatalog.Application.DTOs;
 using ProductCatalog.Application.Interfaces;
-using ProductCatalog.Domain.Entities;
 
 namespace ProductCatalog.API.Controllers;
+
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class CategoriesController : ControllerBase
 {
     private readonly ICategoryService _categoryService;
@@ -43,7 +44,7 @@ public class CategoriesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<CategoryDTO>> Post([FromBody] CategoryDTO categoryDTO)
     {
-        if(categoryDTO is null)
+        if (categoryDTO is null)
         {
             return BadRequest("Invalid Data");
         }
@@ -56,12 +57,12 @@ public class CategoriesController : ControllerBase
     [HttpPut]
     public async Task<IActionResult> Put(int id, [FromBody] CategoryDTO categoryDTO)
     {
-        if(id != categoryDTO.Id)
+        if (id != categoryDTO.Id)
         {
             return BadRequest();
         }
 
-        if(categoryDTO is null)
+        if (categoryDTO is null)
         {
             return BadRequest();
         }
@@ -75,7 +76,7 @@ public class CategoriesController : ControllerBase
     public async Task<IActionResult> Delete(int id)
     {
         var category = await _categoryService.GetCategoryById(id);
-        if(category is null)
+        if (category is null)
         {
             return NotFound("category not found");
         }

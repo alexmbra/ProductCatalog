@@ -5,7 +5,7 @@
 namespace ProductCatalog.Infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class SeedProdutos : Migration
+    public partial class SeedProducts : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder mb)

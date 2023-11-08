@@ -2,6 +2,7 @@
 using ProductCatalog.Infra.Data.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace ProductCatalog.Infra.Data.Context;
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -11,11 +11,13 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddInfrastuctureAPI(builder.Configuration);
+        builder.Services.AddInfrastuctureJWT(builder.Configuration);
+        builder.Services.AddInfrastuctureSwagger();
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+
 
         var app = builder.Build();
 
@@ -27,8 +29,10 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-
+        app.UseStatusCodePages();
+        app.UseAuthentication();
         app.UseAuthorization();
+        
 
         app.MapControllers();
 
